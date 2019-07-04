@@ -17,7 +17,7 @@ You may assume that each input would have exactly one solution, and you may not 
 
 ## Trick & Notes
 
-- HashMap的键存储为数组元素，值存为下标（反过来存则不好取（target- nums[i]）值所对应的键）
-- target- nums[i] 不能是nums[i]本身！ 防止出现6-3 =3 的情况（但nums数组中可以有两个3）
+- HashMap的键存储为数组元素，值存为下标（反过来存则不好取`target- nums[i]`值所对应的键）
+- `target- nums[i]` 不能是`nums[i]`本身！ 防止出现6-3 =3 的情况（但nums数组中可以有两个3）
 - 可以将存值和检查的两次遍历并成一个，注意输出的先后顺序即可
 - 如果找不到则 `throw new IllegalArgumentException("No solution");`
