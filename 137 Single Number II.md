@@ -59,7 +59,7 @@
 
 看了Discussion区，不禁感叹那是真滴牛皮。
 
-评论区其中一位大神便使用了真值表进行逻辑函数的运算。**这个方法核心思想是建立一个记录状态的变量**，此方法适用于其他所有元素出现K次，求唯一一个元素出现M次的问题（every one occurs K times except one occurs M times）。对于此问题，K=3，M=1。
+- 评论区其中一位大神便使用了真值表进行逻辑函数的运算。**这个方法核心思想是建立一个记录状态的变量**，此方法适用于其他所有元素出现K次，求唯一一个元素出现M次的问题（every one occurs K times except one occurs M times）。对于此问题，K=3，M=1。
 
 ```java
 public int singleNumber(int[] nums) {
@@ -83,7 +83,7 @@ public int singleNumber(int[] nums) {
     }
 ```
 
-另一位大神构造了一个32bit位的int，从**比较所有元素的每一位**入手，每当有三个元素在这一位上均为1则清零。最后留下的便是单独的那个元素。（这个思想和三进制的想法不谋而合，非常阔以）。方法时间复杂度为O(32n)，并且容易扩展到其他所有元素出现K次，唯一一个元素出现1次的问题。
+- 另一位大神构造了一个32bit位的int，从**比较所有元素的每一位**入手，每当有三个元素在这一位上均为1则清零。最后留下的便是单独的那个元素。（这个思想和三进制的想法不谋而合，非常阔以）。方法时间复杂度为O(32n)，并且容易扩展到其他所有元素出现K次，唯一一个元素出现1次的问题。
 
 > I like to think about the number in 32 bits and just count how many 1s are there in each bit, and `sum %= 3` will clear it once it reaches 3. After running for all the numbers for each bit, if we have a 1, then that 1 belongs to the single number, we can simply move it back to its spot by doing `ans |= sum << i;`
 >
