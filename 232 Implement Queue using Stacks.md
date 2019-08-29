@@ -31,7 +31,7 @@
 
 ## 想法
 
-和 *#225* 互为对应啊。
+和 *#225* 互为对应啊。  
 用两个Stack进行存储，在s1里push，在s2里pop和peek。当两个Stack都为空的时候表示空队列。push()的时间复杂度为O(1)，pop()的时间复杂度...[Solution](https://leetcode.com/problems/implement-queue-using-stacks/solution/)中用的说法叫做`Amortized O(1) per operation.`
 
 ```java
