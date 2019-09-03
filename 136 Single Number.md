@@ -36,3 +36,7 @@ public int singleNumber(int[] nums) {
 
 时间复杂度O(n)。  
 然而Leetcode运行时间1ms，仅打败了50%的Java Online Submission？点进去看0ms的Submission是申请了一个`int res`来存运算结果最后返回res。
+
+## Notes
+
+在*#268. Missing Number*也可以使用异或运算。
