@@ -46,6 +46,8 @@ return (Math.log10(x)/Math.log10(3) %1 ==0);
 >return (Math.log(n) / Math.log(3) + epsilon) % 1 <= 2 * epsilon;
 >```
 
+另一种解法： 算一下正整数范围内的3的幂，查表完事。
+
 ## Approach : Integer Limitations
 
 由于是整数，我们可以计算整数范围内最大的3的幂。
@@ -61,3 +63,8 @@ return n > 0 && 1162261467 % n == 0;
 ```
 
 时间复杂度O(1) , 空间O(1)。
+
+## Notes
+
+*#231 Power of Two*  
+*#342 Power of Four*  
