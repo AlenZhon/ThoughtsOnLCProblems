@@ -29,7 +29,7 @@
 
 小时上亮最多灯的个数是3，如7 = (0111)b 11 = (1011)b
 
-可以将所有小时和分钟按照亮灯个数分类存储，读入`num`后循环遍历即可。
+可以将所有小时和分钟按照亮灯个数分类存储，读入`num`后循环遍历即可。时间复杂度O(1)
 
 ```java
  public List<String> readBinaryWatch(int num) {
@@ -50,7 +50,7 @@
     }
 ```
 
-评论区老哥还有一种非常简单粗暴的`switch (num)` + 暴力输出的方法，非常狠。
+评论区老哥还有一种非常简单粗暴的`switch (num)` + 暴力输出的方法，时间复杂度真实 O(1)。
 
 ```java
 public List<String> readBinaryWatch(int num) {
@@ -66,5 +66,22 @@ public List<String> readBinaryWatch(int num) {
         case 8: return Arrays.asList("11:31", "11:47", "11:55", "11:59", "7:31", "7:47", "7:55", "7:59");
         default: return Arrays.asList();
       }
+    }
+```
+
+另一种方法用到了`Integer.bitCount()`方法.
+
+```java
+public List<String> readBinaryWatch(int num) {
+        if (num < 0 || num > 10) return new ArrayList<>();
+        List<String> result = new ArrayList<>();
+
+        for (int hour = 0; hour <= 11; hour++)
+            for (int minute = 0; minute <= 59; minute++)
+                // If number of bits in hour + number of bits in minute equals num
+                // add to result or else do nothing.
+                if (Integer.bitCount(hour) + Integer.bitCount(minute) == num)
+                    result.add(String.format("%d:%02d", hour, minute));
+        return result;
     }
 ```
