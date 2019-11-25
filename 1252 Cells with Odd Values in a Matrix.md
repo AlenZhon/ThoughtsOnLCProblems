@@ -55,9 +55,9 @@ public int oddCells(int n, int m, int[][] indices) {
 可以不初始化矩阵，只是初始化int[n]和int[m]数组用于存放每行和每列的增加次数。然后用奇偶数的乘法算出结果。
 
 ```java
-public int oddCells(int m, int n, int[][] indices) {
-        int[] rows = new int[m];
-        int[] cols = new int[n];
+public int oddCells(int n, int m, int[][] indices) {
+        int[] rows = new int[n];
+        int[] cols = new int[m];
 
         for (int[] index: indices) {
             rows[index[0]]++;
