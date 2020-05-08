@@ -2,11 +2,11 @@
 
 ## 题目描述
 
-Implement int sqrt(int x).
-
-Compute and return the square root of x, where x is guaranteed to be a non-negative integer.
-
-Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
+>Implement int sqrt(int x).
+>
+>Compute and return the square root of x, where x is guaranteed to be a non-negative integer.
+>
+>Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
 
 ## 怎么解的
 
@@ -47,3 +47,24 @@ public int mySqrt(int x) {
     return (int)i;
 }
 ```
+
+### 在此基础上修改成保留两位小数
+
+牛顿迭代法
+
+```java
+public static double mySqrt(double x){
+        //DecimalFormat df=new DecimalFormat("0.00");  //import java.text.DecimalFormat;
+        if (x < 0 ) return Double.NaN;
+        if (x == 0) return 0.0;
+        double err = 1e-12;
+        double i = x;
+        while(Math.abs(i - x / i) > err)
+            i = (i + x / i) / 2.0;
+        i = (double) Math.round(i * 100) /100;
+        return i;
+        //return new Double(df.format(i));
+    }
+```
+
+
