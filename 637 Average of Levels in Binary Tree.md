@@ -79,3 +79,9 @@ public List < Double > averageOfLevels(TreeNode root) {
 ```
 
 时间复杂度O(n)，整棵树只遍历一次。空间复杂度O(h)，和树的最大高度有关。
+
+## note
+
+- 用double存sum而不是用int可以规避数据溢出的测试用例。
+- bfs的思路应该第一时间想到一次把队列里所有的元素拿出来就是一层。
+
